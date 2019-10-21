@@ -34,9 +34,9 @@ public class TableFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         setHasOptionsMenu(true);
         adapter = new CellViewAdapter();
-//        if (savedInstanceState != null) {
-//            cellCounter = savedInstanceState.getInt(CELLS_COUNT);
-//        }
+        if (savedInstanceState != null) {
+            cellCounter = savedInstanceState.getInt(CELLS_COUNT);
+        }
         super.onCreate(savedInstanceState);
     }
 
@@ -80,8 +80,8 @@ public class TableFragment extends Fragment {
 
     @Override
     public void onSaveInstanceState(@NonNull Bundle outState) {
-//        outState.putInt(CELLS_COUNT, cellCounter);
-//        super.onSaveInstanceState(outState);
+        outState.putInt(CELLS_COUNT, cellCounter);
+        super.onSaveInstanceState(outState);
     }
 
     class CellViewHolder extends RecyclerView.ViewHolder {
